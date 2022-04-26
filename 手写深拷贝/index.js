@@ -1,3 +1,11 @@
+const map = new Map();
+map.set("key1", 1);
+map.set("key2", 2);
+
+const set = new Set();
+set.add(1);
+set.add(2);
+
 const testObj = {
   number: 1,
   string: "1",
@@ -12,8 +20,8 @@ const testObj = {
   date: new Date(),
   regexp: /\d+/,
   error: new Error(),
-  map: new Map(),
-  set: new Set(),
+  map,
+  set,
   weakMap: new WeakMap(),
   weakSet: new WeakSet(),
 };
