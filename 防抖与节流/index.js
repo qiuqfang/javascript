@@ -15,7 +15,7 @@ function debounce(fn, time) {
 // 时间戳版
 function throttleByTimestamp(fn, time) {
   let timer = null;
-  let priTime = Date.now();
+  let priTime = 0;
   return function () {
     timer && clearTimeout(timer);
     const nowTime = Date.now();
@@ -25,6 +25,7 @@ function throttleByTimestamp(fn, time) {
     } else {
       timer = setTimeout(() => {
         fn.apply(this, arguments);
+        priTime = nowTime;
       }, time);
     }
   };
